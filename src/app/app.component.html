@@ -1,10 +1,10 @@
-<app-header></app-header>
+<app-header (displayPage)="onDisplayPage($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-10">
-      <app-bookshelf></app-bookshelf>
-      <hr>
-      <app-library></app-library>
+      <app-bookshelf *ngIf="showPage === 'bookshelf'"></app-bookshelf>
+      <hr />
+      <app-library *ngIf="showPage === 'library'"></app-library>
     </div>
   </div>
 </div>
