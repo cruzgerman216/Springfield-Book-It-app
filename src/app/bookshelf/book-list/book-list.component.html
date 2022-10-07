@@ -1,6 +1,7 @@
-<div class="row mb-3" *ngFor="let bookEl of myBooks">
+<div class="row mb-3" *ngFor="let bookEl of myBooks; let i = index">
   <div class="col-md-12">
     <app-book [book]="bookEl" (click)="onBookSelected(bookEl)"></app-book>
+    <button (click)="onRemoveBook(i)">-</button>
   </div>
 </div>
 

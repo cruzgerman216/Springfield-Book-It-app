@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Book } from 'src/app/shared/book/book.model';
+import { BookshelfService } from '../bookshelf.service';
 
 @Component({
   selector: 'app-book-list',
@@ -7,25 +8,28 @@ import { Book } from 'src/app/shared/book/book.model';
   styleUrls: ['./book-list.component.css'],
 })
 export class BookListComponent implements OnInit {
-  myBooks: Book[] = [
-    new Book(
-      'Children of Time',
-      'Adrian Check',
-      'https://m.media-amazon.com/images/I/51tuexbxdIL._SL500_.jpg',
-      'Sci-Fi'
-    ),
-  ];
+  myBooks: Book[] = [];
 
   @Output() bookSelected = new EventEmitter<Book>();
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor(private bookshelfService: BookshelfService) {}
+
+  ngOnInit(): void {
+    this.myBooks = this.bookshelfService.getBooks();
+    this.bookshelfService.bookListChanged.subscribe((books)=>{
+      this.myBooks = books
+    })
+  }
   // . . .
 
   // . . .
 
-  onBookSelected(book:Book) {
+  onBookSelected(book: Book) {
     // Tell App that someone clicked on a book!
     this.bookSelected.emit(book);
+  }
+
+  onRemoveBook(idx){
+    this.bookshelfService.removeBook(idx)
   }
 }
