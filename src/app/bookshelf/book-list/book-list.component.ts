@@ -10,26 +10,18 @@ import { BookshelfService } from '../bookshelf.service';
 export class BookListComponent implements OnInit {
   myBooks: Book[] = [];
 
-  @Output() bookSelected = new EventEmitter<Book>();
-
   constructor(private bookshelfService: BookshelfService) {}
 
   ngOnInit(): void {
+    // Use the Service to set local "myBooks" array to Service/Global "myBooks" array
     this.myBooks = this.bookshelfService.getBooks();
-    this.bookshelfService.bookListChanged.subscribe((books)=>{
-      this.myBooks = books
-    })
-  }
-  // . . .
-
-  // . . .
-
-  onBookSelected(book: Book) {
-    // Tell App that someone clicked on a book!
-    this.bookSelected.emit(book);
+    // Listen for changes on the global "myBooks" array and update the local version
+    this.bookshelfService.bookListChanged.subscribe((books: Book[]) => {
+      this.myBooks = books;
+    });
   }
 
-  onRemoveBook(idx){
-    this.bookshelfService.removeBook(idx)
+  onRemoveBook(idx) {
+    this.bookshelfService.removeBook(idx);
   }
 }

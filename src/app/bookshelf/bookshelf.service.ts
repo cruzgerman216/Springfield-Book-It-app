@@ -25,7 +25,7 @@ export class BookshelfService {
       'Fiction'
     ),
   ];
-
+  bookSelected = new EventEmitter<Book>();
   bookListChanged = new EventEmitter<Book[]>();
 
   getBooks() {
