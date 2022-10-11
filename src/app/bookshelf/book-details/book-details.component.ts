@@ -7,7 +7,7 @@ import { Book } from 'src/app/shared/book/book.model';
   styleUrls: ['./book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
-  @Input() book: Book;
+  @Input() book: Book = new Book('title', 'author', '', 'genre')
 
   constructor() { }
 

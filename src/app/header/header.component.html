@@ -21,10 +21,13 @@
   >
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" (click)="showBookshelf()">Bookshelf</a>
+        <a class="nav-link" routerLink="/bookshelf" routerLinkActive="active-link">Bookshelf</a>
       </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="/library">Library Anchor Tag</a>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" (click)="showLibrary()">Library</a>
+        <a class="nav-link" routerLink="/library" routerLinkActive="active-link">Library</a>
       </li>
     </ul>
     <ul class="navbar-nav">

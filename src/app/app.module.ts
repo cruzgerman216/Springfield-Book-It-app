@@ -10,6 +10,9 @@ import { LibraryComponent } from './library/library.component';
 import { BookSearchComponent } from './library/book-search/book-search.component';
 import { BookResultsComponent } from './library/book-results/book-results.component';
 import { BookComponent } from './shared/book/book.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-home.component';
+import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,13 @@ import { BookComponent } from './shared/book/book.component';
     LibraryComponent,
     BookSearchComponent,
     BookResultsComponent,
-    BookComponent
+    BookComponent,
+    BookshelfHomeComponent,
+    BookshelfEditComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

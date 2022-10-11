@@ -2,9 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-10">
-      <app-bookshelf *ngIf="showPage === 'bookshelf'"></app-bookshelf>
-      <hr />
-      <app-library *ngIf="showPage === 'library'"></app-library>
+     <router-outlet></router-outlet>
     </div>
   </div>
 </div>

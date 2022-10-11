@@ -7,10 +7,6 @@
 
   <!-- Right Side - Book Details -->
   <div class="col-md-6">
-    <app-book-details
-      *ngIf="selectedBook; else infoText"
-      [book]="selectedBook"
-    ></app-book-details>
-    <ng-template #infoText><p>Please select a book!</p></ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>
