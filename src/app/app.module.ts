@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-home.component';
 import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { NotificationComponent } from './shared/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BookshelfHomeComponent,
     BookshelfEditComponent,
     DropdownDirective,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Book } from '../shared/book/book.model';
 
 @Injectable({
@@ -25,8 +26,8 @@ export class BookshelfService {
       'Fiction'
     ),
   ];
-  bookSelected = new EventEmitter<Book>();
-  bookListChanged = new EventEmitter<Book[]>();
+  bookSelected = new Subject<Book>();
+  bookListChanged = new Subject<Book[]>();
 
   getBooks() {
     return this.myBooks.slice();
@@ -35,14 +36,15 @@ export class BookshelfService {
   // Remove a book
   removeBook(idx: number) {
     this.myBooks.splice(idx, 1);
-    this.bookListChanged.emit(this.getBooks());
+    this.bookListChanged.next(this.getBooks());
   }
 
   // Add a book
   addBook(book: Book) {
     this.myBooks.push(book);
-    this.bookListChanged.emit(this.getBooks());
+    this.bookListChanged.next(this.getBooks());
   }
+  
   getBook(idx: number) {
     return this.myBooks.slice()[idx]
   }

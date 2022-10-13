@@ -14,8 +14,4 @@ export class BookComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onBookSelected() {
-    // Tell App Component that someone clicked on a book!
-    this.bookshelfService.bookSelected.emit(this.book);
-  }
 }
