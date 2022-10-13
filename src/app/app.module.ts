@@ -13,6 +13,7 @@ import { BookComponent } from './shared/book/book.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-home.component';
 import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edit.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edi
     BookComponent,
     BookshelfHomeComponent,
     BookshelfEditComponent,
+    DropdownDirective,
   ],
   imports: [
     BrowserModule,

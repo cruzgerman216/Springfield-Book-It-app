@@ -9,7 +9,7 @@ import { Book } from './book.model';
 })
 export class BookComponent implements OnInit {
   @Input() book: Book;
-
+  @Input() idx:number = 0;
   constructor(private bookshelfService: BookshelfService) {}
 
   ngOnInit(): void {}

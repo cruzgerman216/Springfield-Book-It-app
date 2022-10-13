@@ -43,5 +43,8 @@ export class BookshelfService {
     this.myBooks.push(book);
     this.bookListChanged.emit(this.getBooks());
   }
+  getBook(idx: number) {
+    return this.myBooks.slice()[idx]
+  }
   constructor() {}
 }
