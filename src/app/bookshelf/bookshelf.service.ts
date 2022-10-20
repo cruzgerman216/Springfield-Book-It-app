@@ -45,6 +45,13 @@ export class BookshelfService {
     this.bookListChanged.next(this.getBooks());
   }
   
+
+  updateBook(idx:number, newBook:Book){
+    // Update the object
+    this.myBooks[idx] = newBook;
+    // Broadcast to subscribers of updated array
+    this.bookListChanged.next(this.getBooks());
+  }
   getBook(idx: number) {
     return this.myBooks.slice()[idx]
   }
