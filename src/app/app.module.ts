@@ -15,6 +15,7 @@ import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-hom
 import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { NotificationComponent } from './shared/notification/notification.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NotificationComponent } from './shared/notification/notification.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
