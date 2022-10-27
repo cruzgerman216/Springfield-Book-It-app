@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { HTTPService } from '../shared/http/http.service';
 
 @Component({
   selector: 'app-header',
@@ -10,17 +11,15 @@ export class HeaderComponent implements OnInit {
   show: boolean = false;
   @Output() displayPage = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(private httpService: HTTPService) {}
 
   ngOnInit(): void {}
 
-  showBookshelf() {
-    this.displayPage.emit('bookshelf');
-    console.log('Bookshelf');
+  onSaveData() {
+    this.httpService.saveBooksToFirebase();
   }
 
-  showLibrary() {
-    this.displayPage.emit('library');
-    console.log('Library');
-  }
+  onFetchData() {
+    this.httpService.fetchBooksFromFirebase().subscribe();
+}
 }
