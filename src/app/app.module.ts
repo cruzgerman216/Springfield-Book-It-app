@@ -16,7 +16,8 @@ import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edi
 import { DropdownDirective } from './shared/dropdown.directive';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { AuthComponent } from './shared/auth/auth.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http'
     BookshelfEditComponent,
     DropdownDirective,
     NotificationComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

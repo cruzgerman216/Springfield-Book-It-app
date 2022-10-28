@@ -6,6 +6,7 @@ import { BookshelfEditComponent } from './bookshelf/bookshelf-edit/bookshelf-edi
 import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-home.component';
 import { BookshelfComponent } from './bookshelf/bookshelf.component';
 import { LibraryComponent } from './library/library.component';
+import { AuthComponent } from './shared/auth/auth.component';
 
 const routes: Routes = [
   // localhost:4200/bookshelf
@@ -41,6 +42,10 @@ const routes: Routes = [
     redirectTo: 'bookshelf',
     pathMatch: 'full',
   },
+  {
+    path: 'auth', 
+    component: AuthComponent
+  }
 ];
 
 @NgModule({
